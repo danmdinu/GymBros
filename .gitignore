@@ -1,0 +1,39 @@
+# Build outputs
+bin/
+obj/
+node_modules/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Secrets - DO NOT COMMIT
+firebase-service-account.json
+**/firebase-service-account.json
+
+# Expo
+.expo/
+dist/
+
+# OpenTelemetry binaries (too large for GitHub)
+otel-collector/otelcol-contrib
+otel-collector/*.tar.gz
