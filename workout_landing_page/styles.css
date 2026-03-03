@@ -567,6 +567,148 @@ body {
 }
 
 /* ─────────────────────────────────────────────
+   WHO IS THIS FOR
+───────────────────────────────────────────── */
+.who-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.who-card:hover {
+  transform: translateY(-4px);
+}
+
+.who-card-yes:hover {
+  border-color: rgba(200, 255, 0, 0.3);
+}
+
+.who-card-no:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.who-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #9ca3af;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.who-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+
+.who-dot-yes {
+  background: var(--lime);
+}
+
+.who-dot-no {
+  background: #333;
+}
+
+/* ─────────────────────────────────────────────
+   VIDEO PLACEHOLDER
+───────────────────────────────────────────── */
+.video-placeholder {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+    linear-gradient(135deg, rgba(200, 255, 0, 0.03) 0%, transparent 60%),
+    linear-gradient(rgba(200, 255, 0, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 255, 0, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  transition: border-color 0.3s;
+}
+
+.video-placeholder:hover {
+  border-color: rgba(200, 255, 0, 0.3);
+}
+
+.video-play-btn {
+  width: 5rem;
+  height: 5rem;
+  background: var(--lime);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 40px rgba(200, 255, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-placeholder:hover .video-play-btn {
+  box-shadow: 0 0 60px rgba(200, 255, 0, 0.6);
+}
+
+/* ─────────────────────────────────────────────
+   TESTIMONIALS
+───────────────────────────────────────────── */
+.testimonial-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(200, 255, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.testimonial-card-featured {
+  border-color: rgba(200, 255, 0, 0.25);
+  background: linear-gradient(135deg, rgba(200, 255, 0, 0.04) 0%, var(--card) 100%);
+}
+
+.testimonial-card-featured:hover {
+  border-color: rgba(200, 255, 0, 0.4);
+}
+
+.testimonial-quote {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 4rem;
+  line-height: 0.8;
+  color: #2a2a2a;
+  margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #222;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--lime);
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────
    SELECTION COLOR
 ───────────────────────────────────────────── */
 ::selection {
