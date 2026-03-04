@@ -2,8 +2,8 @@
    BASE
 ───────────────────────────────────────────── */
 :root {
-  --lime: #C8FF00;
-  --lime-dark: #a3cc00;
+  --lime: #A3E635;
+  --lime-dark: #84CC16;
   --bg: #0d0d0d;
   --card: #161616;
   --border: #222222;
@@ -630,6 +630,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: default;
   background-image:
     linear-gradient(135deg, rgba(200, 255, 0, 0.03) 0%, transparent 60%),
     linear-gradient(rgba(200, 255, 0, 0.015) 1px, transparent 1px),
@@ -689,7 +690,7 @@ body {
   font-family: 'Bebas Neue', cursive;
   font-size: 4rem;
   line-height: 0.8;
-  color: #2a2a2a;
+  color: var(--lime);
   margin-bottom: 1rem;
 }
 
