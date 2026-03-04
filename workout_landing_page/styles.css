@@ -489,25 +489,41 @@ body {
    WAITLIST FORM
 ───────────────────────────────────────────── */
 .form-input {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: #1f1f1f;
+  border: 2px solid #404040;
   color: #ffffff;
-  font-size: 0.9375rem;
+  font-size: 1rem;
+  font-weight: 500;
   padding: 0.875rem 1.25rem;
   border-radius: 0.5rem;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
   font-family: 'Inter', sans-serif;
   width: 100%;
 }
 
 .form-input::placeholder {
-  color: #4b5563;
+  color: #d1d5db;
+  font-weight: 500;
+}
+
+.form-input:hover {
+  border-color: #525252;
+  background: #252525;
 }
 
 .form-input:focus {
   border-color: var(--lime);
-  box-shadow: 0 0 0 3px rgba(200, 255, 0, 0.1);
+  background: #252525;
+  box-shadow: 0 0 0 3px rgba(163, 230, 53, 0.15);
+}
+
+/* Waitlist CTA button – larger and bolder */
+#waitlist-form .btn-primary {
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.875rem 1.75rem;
+  letter-spacing: 0.04em;
 }
 
 /* ─────────────────────────────────────────────
