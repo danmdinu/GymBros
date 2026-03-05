@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IGotYouBro — Two People. One Programme. Zero Boring.</title>
+  <meta name="description" content="Workouts built for two. Strength, agility, balance, mobility — all in pair-based programmes that kill the boredom for good." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lime: { DEFAULT: '#A3E635', dark: '#84CC16' },
+            dark: { DEFAULT: '#0d0d0d', card: '#161616', border: '#222' }
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'cursive'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-dark text-white font-body antialiased">
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo + tagline -->
+      <a href="#hero" class="flex flex-col gap-0.5 group">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-lime rounded-sm flex items-center justify-center">
+            <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
+          </div>
+          <span class="font-display text-2xl tracking-wider text-white group-hover:text-lime transition-colors">IGOTYOUBRO</span>
+        </div>
+        <span class="hidden md:block text-gray-300 text-[10px] tracking-wide ml-10">Taking boring out of gym. One bro at a time.</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#concept" class="text-sm text-gray-200 hover:text-lime transition-colors font-medium tracking-wide">BRO MODE</a>
+        <a href="#pillars" class="text-sm text-gray-200 hover:text-lime transition-colors font-medium tracking-wide">TRAINING</a>
+        <a href="#programmes" class="text-sm text-gray-200 hover:text-lime transition-colors font-medium tracking-wide">PROGRAMMES</a>
+        <a href="#about" class="text-sm text-gray-200 hover:text-lime transition-colors font-medium tracking-wide">ABOUT</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="flex items-center gap-4">
+        <a href="#waitlist" class="hidden md:inline-flex btn-primary text-sm">Join the Waitlist</a>
+        <!-- Mobile hamburger -->
+        <button id="menu-toggle" class="md:hidden p-2 text-gray-400 hover:text-white" aria-label="Toggle menu">
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-dark-border">
+      <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
+        <a href="#concept" class="mobile-nav-link">Bro Mode</a>
+        <a href="#pillars" class="mobile-nav-link">Training</a>
+        <a href="#programmes" class="mobile-nav-link">Programmes</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#waitlist" class="btn-primary text-center mt-2">Join the Waitlist</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <!-- Background grid -->
+    <div class="hero-bg absolute inset-0"></div>
+    <!-- Lime glow -->
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-lime/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: Copy -->
+      <div class="fade-up">
+        <div class="flex flex-wrap items-center gap-2 mb-6">
+          <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5">
+            <span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span>
+            <span class="text-lime text-xs font-semibold tracking-widest uppercase">Bro Mode Activated</span>
+          </div>
+          <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
+            <span class="text-gray-200 text-xs font-medium">Bro Mode &amp; Sistah Mode — same programme, you pick the vibe.</span>
+          </div>
+        </div>
+
+        <h1 class="font-display text-7xl md:text-8xl lg:text-9xl leading-none mb-6">
+          <span class="block text-white lg:whitespace-nowrap">TWO PEOPLE.</span>
+          <span class="block text-lime text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap">SAME PROGRAMME.</span>
+          <span class="block text-white lg:whitespace-nowrap">NEVER BORING.</span>
+        </h1>
+
+        <p class="text-gray-200 text-lg md:text-xl leading-relaxed mb-3 max-w-lg">
+          <strong>Every workout at IGotYouBro is built for two people.</strong> Challenges, contests, and pair exercises that make training the best part of your week. No more silence. No more skipping.
+        </p>
+        <p class="text-gray-200 text-sm md:text-base max-w-lg mb-8"><strong>We don't match you with a gym partner. You bring your person.</strong></p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#waitlist" class="btn-primary text-base px-8 py-4">Get Early Access</a>
+          <a href="#concept" class="btn-ghost text-base px-8 py-4">See How It Works</a>
+        </div>
+
+        <!-- Social proof -->
+        <div class="mt-10 flex items-center gap-4">
+          <div class="flex -space-x-2">
+            <div class="avatar-placeholder">A</div>
+            <div class="avatar-placeholder">M</div>
+            <div class="avatar-placeholder">R</div>
+            <div class="avatar-placeholder">+</div>
+          </div>
+          <p class="text-sm text-gray-400"><span class="text-white font-semibold">200+ pairs</span> already on the waitlist</p>
+        </div>
+      </div>
+
+      <!-- Right: Hero workout card -->
+      <div class="fade-up delay-200 hidden lg:block">
+        <div class="hero-card relative">
+          <div class="bg-dark-card border border-dark-border rounded-2xl p-8 space-y-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-display text-2xl text-lime">TODAY'S PICKS</span>
+              <span class="text-xs bg-lime/20 text-lime px-3 py-1 rounded-full font-semibold">FULL BODY</span>
+            </div>
+            <p class="text-gray-400 text-xs pb-2">Just a taste of what Bro Mode looks like.</p>
+
+            <div class="exercise-row">
+              <div class="exercise-icon">🔥</div>
+              <div>
+                <p class="font-semibold text-white">Chest Press Burndown</p>
+                <p class="text-gray-300 text-sm">Go to failure. Bro drops 5kg. No rest. Repeat to the empty bar.</p>
+              </div>
+            </div>
+            <div class="exercise-row">
+              <div class="exercise-icon">⚡</div>
+              <div>
+                <p class="font-semibold text-white">Fire Drill</p>
+                <p class="text-gray-300 text-sm">Timed circuit. Both moving. One rests only when the other works. Race format.</p>
+              </div>
+            </div>
+            <div class="exercise-row">
+              <div class="exercise-icon">🏀</div>
+              <div>
+                <p class="font-semibold text-white">Pass &amp; Squat</p>
+                <p class="text-gray-300 text-sm">Weighted ball. Pass at the top of every rep. Go to failure. Your bro has to hype you through the last ones.</p>
+              </div>
+            </div>
+            <div class="exercise-row">
+              <div class="exercise-icon">⚖️</div>
+              <div>
+                <p class="font-semibold text-white">Elastic Band Balance Hold</p>
+                <p class="text-gray-300 text-sm">One leg. Bro pulls the band unpredictably. You'll find muscles you didn't know existed.</p>
+              </div>
+            </div>
+            <div class="exercise-row">
+              <div class="exercise-icon">💀</div>
+              <div>
+                <p class="font-semibold text-white">Bro Battle: Plank-Off</p>
+                <p class="text-gray-300 text-sm">Last one holding wins. Trash talk encouraged. No ties.</p>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-dark-border flex items-center justify-between">
+              <span class="text-gray-300 text-sm">~55 min · Zero boring sets</span>
+              <span class="text-lime font-semibold text-sm">💪 Built for two</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-gray-300 text-xs tracking-widest uppercase">Scroll</span>
+      <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PAIN POINT
+  ═══════════════════════════════════════════ -->
+  <section id="pain" class="py-24 md:py-32 bg-dark-card border-y border-dark-border overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fade-up text-center mb-16">
+        <p class="text-gray-300 text-sm tracking-widest uppercase font-medium mb-4">Sound familiar?</p>
+        <h2 class="font-display text-5xl md:text-7xl text-white mb-2">THE SAME OLD STORY</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 fade-up delay-100">
+        <div class="pain-card">
+          <span class="pain-number text-lime">01</span>
+          <h3 class="font-display text-3xl text-white mb-2">3 SETS OF 12.</h3>
+          <p class="text-gray-200">Again. Tomorrow. Next week. Every week. Until you stop showing up.</p>
+        </div>
+        <div class="pain-card border-lime/20">
+          <span class="pain-number text-lime">02</span>
+          <h3 class="font-display text-3xl text-white mb-2">HEADPHONES IN.</h3>
+          <p class="text-gray-200">Head down. Avoid eye contact. Train alone in a room full of people. That's gym culture?</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-number text-lime">03</span>
+          <h3 class="font-display text-3xl text-white mb-2">NO PROGRESS.</h3>
+          <p class="text-gray-200">Six months in and the mirror looks the same. Motivation is on life support.</p>
+        </div>
+      </div>
+
+      <div class="fade-up delay-200 text-center mt-16">
+        <p class="font-display text-4xl md:text-6xl text-white">
+          THERE'S A BETTER WAY. <span class="text-lime">WE CALL IT BRO MODE.</span>
+        </p>
+        <a href="#waitlist" class="btn-ghost inline-flex mt-8">Join the Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       WHO IS THIS FOR
+  ═══════════════════════════════════════════ -->
+  <section id="who" class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fade-up text-center mb-16">
+        <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="text-lime text-xs font-semibold tracking-widest uppercase">Who It's For</span>
+        </div>
+        <h2 class="font-display text-5xl md:text-7xl text-white mb-4">YOU ALREADY <span class="text-lime">KNOW.</span></h2>
+        <p class="text-gray-200 text-lg max-w-xl mx-auto">Read this and see if something clicks.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto fade-up delay-100">
+        <!-- Yes column -->
+        <div class="who-card who-card-yes">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-lime/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 class="font-display text-2xl text-white">THIS IS FOR YOU</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-yes"></span>
+              <span>You already have a gym buddy (or a mate who said they'd go with you) and want something built for the two of you</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-yes"></span>
+              <span>You want to train with someone you already know, not a random match from an app</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-yes"></span>
+              <span>You go to the gym but keep losing motivation after a few weeks and can't figure out why</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-yes"></span>
+              <span>You already go with a mate but you both do your own thing and barely interact</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-yes"></span>
+              <span>You've been stuck in the same routine for months and nothing is changing</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-yes"></span>
+              <span>You miss the competitive feeling of team sport and gym just doesn't give you that</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-yes"></span>
+              <span>You want training to be something you actually look forward to on a Monday morning</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- No column -->
+        <div class="who-card who-card-no">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+              <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+            <h3 class="font-display text-2xl text-gray-200">PROBABLY NOT FOR YOU</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-no"></span>
+              <span>You want an app that finds you a gym date or training partner. That's not what we do.</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-no"></span>
+              <span>You love solo training and the headphones-in, eyes-down experience is exactly what you want</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-no"></span>
+              <span>You're completely happy with your current programme and seeing results you're proud of</span>
+            </li>
+            <li class="who-item text-gray-300">
+              <span class="who-dot who-dot-no"></span>
+              <span>You have no one to train with and no interest in finding someone</span>
+            </li>
+          </ul>
+
+          <div class="mt-8 p-4 bg-lime/5 border border-lime/20 rounded-xl">
+            <p class="text-gray-200 text-sm leading-relaxed">If you read the first column and felt called out, you're in the right place. <span class="text-white font-medium">IGotYouBro was built for exactly that feeling.</span> You and your training partner — bro or sistah — get the same programmes and challenges.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="#waitlist" class="btn-ghost inline-flex">Join the Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       BRO MODE CONCEPT
+  ═══════════════════════════════════════════ -->
+  <section id="concept" class="py-24 md:py-32 bg-dark-card border-y border-dark-border">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="fade-up">
+        <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="text-lime text-xs font-semibold tracking-widest uppercase">The Concept</span>
+        </div>
+        <h2 class="font-display text-6xl md:text-7xl text-white leading-none mb-8">
+          BRO MODE<br /><span class="text-lime">UNLOCKED.</span>
+        </h2>
+        <p class="text-gray-200 text-lg leading-relaxed mb-6">
+          Every single exercise in our programmes is designed to be done with another person. Not just a spotter but a <strong class="text-white">training partner</strong> who pushes you, competes against you, and makes it impossible to phone it in. That means you and someone you already know — friend, teammate, flatmate. Not an app that pairs you with a stranger. Bro or sistah, same workouts. We're just here to make them good.
+        </p>
+        <p class="text-gray-200 text-lg leading-relaxed mb-6">
+          Research shows people stick to training better when they're not doing it alone. A training partner means more sessions, more effort, and way more fun.
+        </p>
+        <p class="text-gray-200 text-lg leading-relaxed mb-6">
+          Think push-ups where you high-five mid-rep. Balance challenges where you need each other to stay upright. Strength drills where one of you is the resistance. Training reimagined from the ground up for two people who actually want to be there.
+        </p>
+        <p class="text-gray-200 text-lg leading-relaxed mb-10">
+          We raided football, basketball, rugby and athletics for the movement patterns that actually build athletes and rebuilt them for the gym floor. This is what team sport training looks like when two regular people do it together.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="check-item"><span class="check-icon">✓</span> Nobody sits while the other works. You're both moving, always.</div>
+          <div class="check-item"><span class="check-icon">✓</span> Built-in accountability. Your bro is waiting for you.</div>
+          <div class="check-item"><span class="check-icon">✓</span> Competitive elements that make you push harder without even noticing.</div>
+          <div class="check-item"><span class="check-icon">✓</span> Fresh workouts every time. No two sessions feel the same.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       4 PILLARS
+  ═══════════════════════════════════════════ -->
+  <section id="pillars" class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fade-up text-center mb-16">
+        <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="text-lime text-xs font-semibold tracking-widest uppercase">Training System</span>
+        </div>
+        <h2 class="font-display text-5xl md:text-7xl text-white mb-4">4 PILLARS.<br /><span class="text-lime">ZERO BOREDOM.</span></h2>
+        <p class="text-gray-200 text-lg max-w-xl mx-auto">Every IGotYouBro programme cycles through all four pillars so your body and your brain are always being challenged in a new way.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-up delay-100">
+        <div class="pillar-card group">
+          <div class="pillar-icon">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
+          </div>
+          <h3 class="font-display text-3xl text-white mb-2 group-hover:text-lime transition-colors">STRENGTH</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">Partner resistance, isometric holds, and loaded pair drills that build real-world power without isolating machines.</p>
+          <div class="pillar-badge">Build it together</div>
+        </div>
+
+        <div class="pillar-card group">
+          <div class="pillar-icon">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-display text-3xl text-white mb-2 group-hover:text-lime transition-colors">AGILITY</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">Reaction drills, mirroring runs, and competitive movement patterns that make you faster and way more fun to watch.</p>
+          <div class="pillar-badge">Race your bro</div>
+        </div>
+
+        <div class="pillar-card group">
+          <div class="pillar-icon">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1M4.22 4.22l.71.71m14.14 14.14l.71.71M3 12H4m17 0h-1M4.22 19.78l.71-.71M18.36 5.64l.71-.71M12 6a6 6 0 110 12A6 6 0 0112 6z"/></svg>
+          </div>
+          <h3 class="font-display text-3xl text-white mb-2 group-hover:text-lime transition-colors">BALANCE</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">Unilateral and partner-assisted stability work that fixes the imbalances machines hide and challenges your ego in the best way.</p>
+          <div class="pillar-badge">Fall together, rise better</div>
+        </div>
+
+        <div class="pillar-card group">
+          <div class="pillar-icon">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-display text-3xl text-white mb-2 group-hover:text-lime transition-colors">MOBILITY</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">Assisted stretching, PNF routines, and active recovery drills that keep you moving pain-free for the long game.</p>
+          <div class="pillar-badge">Move better, feel better</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CHALLENGES & CONTESTS
+  ═══════════════════════════════════════════ -->
+  <section id="challenges" class="py-24 md:py-32 bg-dark-card border-y border-dark-border overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Left: Leaderboard mockup -->
+        <div class="fade-up order-2 lg:order-1">
+          <div class="bg-dark border border-dark-border rounded-2xl p-6 space-y-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-display text-2xl text-lime">THIS WEEK'S LEADERBOARD</span>
+              <span class="text-xs text-gray-300">Week 12 · Plank Challenge</span>
+            </div>
+
+            <div class="leaderboard-row gold">
+              <span class="rank">🥇</span>
+              <div class="flex-1">
+                <p class="font-semibold text-white">Alex &amp; Marco</p>
+                <p class="text-xs text-gray-300">4:32 combined hold</p>
+              </div>
+              <span class="score text-yellow-400">4:32</span>
+            </div>
+            <div class="leaderboard-row silver">
+              <span class="rank">🥈</span>
+              <div class="flex-1">
+                <p class="font-semibold text-white">Ana &amp; Maria</p>
+                <p class="text-xs text-gray-300">4:18 combined hold</p>
+              </div>
+              <span class="score text-gray-100">4:18</span>
+            </div>
+            <div class="leaderboard-row lime-row">
+              <span class="rank">🥉</span>
+              <div class="flex-1">
+                <p class="font-semibold text-white">Dan &amp; Dumi</p>
+                <p class="text-xs text-gray-300">3:55 combined hold</p>
+              </div>
+              <span class="score text-lime">3:55</span>
+            </div>
+            <div class="leaderboard-row">
+              <span class="rank text-gray-300">4</span>
+              <div class="flex-1">
+                <p class="text-gray-200">Mara &amp; Vlad</p>
+                <p class="text-xs text-gray-300">3:22 combined hold</p>
+              </div>
+              <span class="score text-gray-300">3:22</span>
+            </div>
+            <div class="leaderboard-row">
+              <span class="rank text-gray-300">5</span>
+              <div class="flex-1">
+                <p class="text-gray-200">Your pair?</p>
+                <p class="text-xs text-gray-300">Join the waitlist</p>
+              </div>
+              <span class="score text-gray-400">...</span>
+            </div>
+
+            <a href="#waitlist" class="block text-center text-lime text-sm font-semibold mt-2 hover:underline">Get on this leaderboard →</a>
+          </div>
+        </div>
+
+        <!-- Right: Copy -->
+        <div class="fade-up delay-200 order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+            <span class="text-lime text-xs font-semibold tracking-widest uppercase">Challenges &amp; Contests</span>
+          </div>
+          <h2 class="font-display text-6xl md:text-7xl text-white leading-none mb-6">
+            YOU'LL NEVER<br /><span class="text-lime">SKIP AGAIN.</span>
+          </h2>
+          <p class="text-gray-200 text-lg leading-relaxed mb-6">
+            Every week, a new challenge. Every month, a contest. IGotYouBro tracks your progress as a pair and puts you on a leaderboard so you always have something to train for and someone to beat.
+          </p>
+          <p class="text-gray-200 text-lg leading-relaxed mb-8">
+            It's not just fitness. It's a <strong class="text-white">rivalry</strong>. A <strong class="text-white">story</strong>. Something you'll actually talk about after the session.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="stat-card">
+              <span class="font-display text-4xl text-lime">52</span>
+              <span class="text-gray-300 text-sm">unique weekly challenges per year</span>
+            </div>
+            <div class="stat-card">
+              <span class="font-display text-4xl text-lime">4</span>
+              <span class="text-gray-300 text-sm">pillars, endlessly varied</span>
+            </div>
+            <div class="stat-card">
+              <span class="font-display text-4xl text-lime">0</span>
+              <span class="text-gray-300 text-sm">boring reps</span>
+            </div>
+            <div class="stat-card">
+              <span class="font-display text-4xl text-lime">∞</span>
+              <span class="text-gray-300 text-sm">excuses for skipping (gone)</span>
+            </div>
+          </div>
+          <div class="text-center mt-10">
+            <a href="#waitlist" class="btn-ghost inline-flex">Join the Waitlist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       VIDEO PLACEHOLDER
+  ═══════════════════════════════════════════ -->
+  <section id="video" class="py-24 md:py-32">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="fade-up text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="text-lime text-xs font-semibold tracking-widest uppercase">See It In Action</span>
+        </div>
+        <h2 class="font-display text-5xl md:text-7xl text-white mb-4">WATCH A <span class="text-lime">BRO MODE</span> WORKOUT.</h2>
+        <p class="text-gray-200 text-lg max-w-lg mx-auto">A real session, two real people, no machines. This is what Monday looks like when you actually want to be there.</p>
+      </div>
+
+      <div class="fade-up delay-100">
+        <div class="video-placeholder group">
+          <!-- Play button -->
+          <div class="video-play-btn group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <!-- COMING SOON badge (centered, larger, not a button) -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
+            <span class="bg-lime text-black text-sm font-bold px-5 py-2.5 rounded-full">COMING SOON</span>
+            <span class="text-gray-300 text-xs">Preview video will drop before launch.</span>
+          </div>
+          <!-- Overlay text -->
+          <div class="absolute bottom-6 left-6">
+            <span class="text-white font-semibold text-lg block">Bro Mode: Strength Session</span>
+            <span class="text-gray-200 text-sm">Full workout · 48 min · No equipment</span>
+          </div>
+        </div>
+        <p class="text-center text-gray-300 text-sm mt-4">Video drops when we launch. Join the waitlist to get notified first.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PROGRAMMES
+  ═══════════════════════════════════════════ -->
+  <section id="programmes" class="py-24 md:py-32 bg-dark-card border-y border-dark-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fade-up text-center mb-16">
+        <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="text-lime text-xs font-semibold tracking-widest uppercase">Programmes</span>
+        </div>
+        <h2 class="font-display text-5xl md:text-7xl text-white mb-4">PICK YOUR <span class="text-lime">LEVEL.</span></h2>
+        <p class="text-gray-200 text-lg max-w-xl mx-auto mb-2">Whether you're just getting started or you've been lifting for years, there's a Bro Mode programme built for you.</p>
+        <p class="text-gray-200 text-sm max-w-xl mx-auto">All programmes are built in collaboration with professional trainers, former athletes, and physiotherapists.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto fade-up delay-100">
+        <!-- Tier 1: First Rep -->
+        <div class="programme-card">
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <span class="text-gray-300 text-xs tracking-widest uppercase font-medium">Programme 01</span>
+              <h3 class="font-display text-4xl text-white mt-1">FIRST<br />REP</h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl">🤝</div>
+          </div>
+          <p class="text-gray-200 leading-relaxed mb-6">You've been to the gym a handful of times or you're just starting out with a mate. First Rep teaches you movement fundamentals through pair work. No experience required, just a willingness to get uncomfortable together.</p>
+          <ul class="space-y-2 mb-8">
+            <li class="prog-feature">3 sessions per week, around 45 minutes each</li>
+            <li class="prog-feature">Full technique guidance for both partners</li>
+            <li class="prog-feature">Progressive difficulty that starts easy and gets real fast</li>
+            <li class="prog-feature">Weekly mini-challenges to track improvement</li>
+          </ul>
+          <a href="#waitlist" class="btn-ghost w-full text-center block">Join Waitlist for Access</a>
+        </div>
+
+        <!-- Tier 2: No Limits -->
+        <div class="programme-card programme-card-featured">
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <span class="text-lime text-xs tracking-widest uppercase font-medium">Programme 02</span>
+              <h3 class="font-display text-4xl text-white mt-1">NO<br />LIMITS</h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-lime/20 flex items-center justify-center text-2xl">🦁</div>
+          </div>
+          <p class="text-gray-200 leading-relaxed mb-6">You know your way around a gym. Now let's make it interesting. No Limits takes experienced athletes and throws them into pair-based intensity that solo training never reaches. Heavier, faster, more technical.</p>
+          <ul class="space-y-2 mb-8">
+            <li class="prog-feature prog-feature-lime">4 to 5 sessions per week, around 60 minutes each</li>
+            <li class="prog-feature prog-feature-lime">Advanced partner mechanics and loaded drills</li>
+            <li class="prog-feature prog-feature-lime">Monthly ranking contests with all pairs</li>
+            <li class="prog-feature prog-feature-lime">Periodised programming with real athletic results</li>
+          </ul>
+          <a href="#waitlist" class="btn-primary w-full text-center block">Get Early Access</a>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="#waitlist" class="btn-ghost inline-flex">Join the Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════════ -->
+  <section id="testimonials" class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fade-up text-center mb-16">
+        <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="text-lime text-xs font-semibold tracking-widest uppercase">Early Testers</span>
+        </div>
+        <h2 class="font-display text-5xl md:text-7xl text-white mb-4">WHAT THEY'RE <span class="text-lime">SAYING.</span></h2>
+        <p class="text-gray-200 text-lg max-w-xl mx-auto">A small group tested the first version of Bro Mode. Here's what came back.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 fade-up delay-100">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="text-gray-100 leading-relaxed mb-6">I've started and quit the gym four times in the last three years. With this I haven't missed a session in two months. The leaderboard thing is stupid but it works. I refuse to let Radu beat me.</p>
+          <div class="flex items-center gap-3 mt-auto">
+            <div class="testimonial-avatar">A</div>
+            <div>
+              <p class="font-semibold text-white text-sm">Alex, 26</p>
+              <p class="text-gray-300 text-xs">First Rep programme</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card testimonial-card-featured">
+          <div class="testimonial-quote">"</div>
+          <p class="text-gray-100 leading-relaxed mb-6">We've been going to the gym together for two years. This is the first time it actually feels competitive. The partner exercises are genuinely hard in a way that solo training never is.</p>
+          <div class="flex items-center gap-3 mt-auto">
+            <div class="testimonial-avatar" style="background: #1f2d00; color: #A3E635; border: 1px solid #A3E635;">M</div>
+            <div>
+              <p class="font-semibold text-white text-sm">Marco, 29 &amp; Luca, 31</p>
+              <p class="text-gray-300 text-xs">No Limits programme</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="text-gray-100 leading-relaxed mb-6">We used to go together and then do completely different workouts. Bro Mode is the first thing we've actually done together. It's way more fun and weirdly we're both progressing faster.</p>
+          <div class="flex items-center gap-3 mt-auto">
+            <div class="testimonial-avatar">I</div>
+            <div>
+              <p class="font-semibold text-white text-sm">Ioana, 28 &amp; Radu, 30</p>
+              <p class="text-gray-300 text-xs">First Rep programme</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
+  <section id="about" class="py-24 md:py-32 bg-dark-card border-y border-dark-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fade-up text-center mb-16">
+        <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="text-lime text-xs font-semibold tracking-widest uppercase">The Team</span>
+        </div>
+        <h2 class="font-display text-5xl md:text-7xl text-white mb-4">WHO WE <span class="text-lime">ARE.</span></h2>
+        <p class="text-gray-200 text-lg max-w-xl mx-auto mb-2">Two guys who got tired of the same thing and decided to fix it.</p>
+        <p class="text-gray-200 text-sm max-w-xl mx-auto">We build Bro Mode with input from professional trainers, former athletes, and physiotherapists so it actually works in the real world.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto fade-up delay-100">
+        <!-- Dan -->
+        <div class="about-card">
+          <div class="about-avatar">D</div>
+          <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-3 py-1 mb-3">
+            <span class="text-lime text-xs font-semibold">Former Pro Athlete</span>
+          </div>
+          <h3 class="font-display text-3xl text-white mb-3">DAN</h3>
+          <p class="text-gray-200 leading-relaxed">
+            I've trained at the highest level where every session has a purpose, a structure, and a reason to show up. When I moved away from professional sport, I couldn't find a single programme that gave me that same buzz. Gym was just repetitive. So I started building something different, using everything I learned about what makes athletes keep coming back and getting better. That became IGotYouBro.
+          </p>
+        </div>
+
+        <!-- Dumi -->
+        <div class="about-card">
+          <div class="about-avatar" style="background: #1a1a1a; color: #A3E635; border: 2px solid #A3E635;">D</div>
+          <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1 mb-3">
+            <span class="text-gray-100 text-xs font-semibold">Gym Enthusiast &amp; Co-Founder</span>
+          </div>
+          <h3 class="font-display text-3xl text-white mb-3">DUMI</h3>
+          <p class="text-gray-200 leading-relaxed">
+            I'm not a pro athlete. I'm just someone who genuinely loves going to the gym and feeling healthy but hated that it always felt like a chore after a few months. I needed variety, competition, and someone to suffer with. When Dan showed me what training for two could look like, everything changed. I'm living proof that this works for regular people who just want to enjoy the process. I'm also the one who just makes it more fun.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       WAITLIST CTA
+  ═══════════════════════════════════════════ -->
+  <section id="waitlist" class="py-24 md:py-32 relative overflow-hidden">
+    <!-- Lime glow background -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-lime/3 to-transparent pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-lime/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="relative max-w-3xl mx-auto px-6 text-center">
+      <div class="fade-up">
+        <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span>
+          <span class="text-lime text-xs font-semibold tracking-widest uppercase">Early Access · Limited Spots</span>
+        </div>
+
+        <h2 class="font-display text-6xl md:text-8xl text-white leading-none mb-6">
+          READY TO<br /><span class="text-lime">BRO UP?</span>
+        </h2>
+
+        <!-- Urgency counter -->
+        <div class="inline-flex items-center gap-3 bg-dark-card border border-dark-border rounded-full px-5 py-2.5 mb-8">
+          <div class="flex -space-x-1.5">
+            <div class="w-6 h-6 rounded-full bg-lime/30 border border-lime/50 text-lime text-xs flex items-center justify-center font-bold">A</div>
+            <div class="w-6 h-6 rounded-full bg-lime/20 border border-lime/40 text-lime text-xs flex items-center justify-center font-bold">M</div>
+            <div class="w-6 h-6 rounded-full bg-lime/10 border border-lime/30 text-lime text-xs flex items-center justify-center font-bold">R</div>
+          </div>
+          <span class="text-gray-100 text-sm"><span class="text-white font-semibold">127 pairs</span> joined this week. Spots for early access are limited.</span>
+        </div>
+
+        <!-- Free month + 50% off offer -->
+        <div class="inline-flex items-center gap-3 bg-lime/10 border border-lime/30 rounded-2xl px-6 py-4 mb-8 max-w-lg mx-auto">
+          <span class="text-3xl">🎁</span>
+          <div class="text-left">
+            <p class="text-white font-semibold text-sm">Your first month free and 50% off your first programme.</p>
+            <p class="text-gray-200 text-xs mt-0.5">No card required. No catch. Only for the first 300 pairs — just show up with your bro.</p>
+          </div>
+        </div>
+
+        <p class="text-gray-100 text-xl md:text-2xl leading-relaxed mb-10 font-medium">
+          Join now to lock in your free month and 50% off your first programme, get first access, and help shape what IGotYouBro becomes.
+        </p>
+
+        <!-- Waitlist Form -->
+        <!-- IMPORTANT: Replace YOUR_FORM_ID below with your Formspree endpoint ID (sign up free at formspree.io) -->
+        <form
+          id="waitlist-form"
+          action="https://formspree.io/f/mgolgzrl"
+          method="POST"
+          class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+            class="form-input flex-1"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            required
+            class="form-input flex-1"
+          />
+          <button type="submit" class="btn-primary whitespace-nowrap" id="submit-btn">
+            <span id="btn-text">Count Me In</span>
+            <span id="btn-loading" class="hidden">Sending...</span>
+          </button>
+        </form>
+
+        <!-- Success message (hidden by default) -->
+        <div id="form-success" class="hidden mt-6 p-4 bg-lime/10 border border-lime/30 rounded-xl text-lime font-medium">
+          You're on the list! We'll be in touch before launch. 🤜🤛
+        </div>
+
+        <!-- Error message (hidden by default) -->
+        <div id="form-error" class="hidden mt-6 p-4 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400">
+          Something went wrong. Try again or email us directly.
+        </div>
+
+        <p class="text-gray-300 text-sm mt-4">No spam. No nonsense. Just IGotYouBro.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="border-t border-dark-border py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-2">
+          <div class="w-7 h-7 bg-lime rounded-sm flex items-center justify-center">
+            <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
+          </div>
+          <span class="font-display text-xl tracking-wider text-white">IGOTYOUBRO</span>
+        </a>
+
+        <!-- Tagline -->
+        <p class="text-gray-300 text-sm text-center">Taking boring out of gym. <span class="text-gray-100">One bro at a time.</span></p>
+
+        <!-- Social links -->
+        <div class="flex items-center gap-4">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="TikTok">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-dark-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-400 text-xs">© 2026 IGotYouBro. Built by Dan &amp; Dumi. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-400 hover:text-gray-200 text-xs transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-gray-200 text-xs transition-colors">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
