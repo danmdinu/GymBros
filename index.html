@@ -243,7 +243,7 @@
         <p class="font-display text-4xl md:text-6xl text-white">
           THERE'S A BETTER WAY. <span class="text-lime">WE CALL IT BRO MODE.</span>
         </p>
-        <a href="#waitlist" class="btn-ghost inline-flex mt-8">Join the Waitlist</a>
+        <a href="#waitlist" class="btn-outline inline-flex mt-8">Join the Waitlist</a>
       </div>
     </div>
   </section>
@@ -336,7 +336,7 @@
         </div>
       </div>
       <div class="text-center mt-12">
-        <a href="#waitlist" class="btn-ghost inline-flex">Join the Waitlist</a>
+        <a href="#waitlist" class="btn-outline inline-flex">Join the Waitlist</a>
       </div>
     </div>
   </section>
@@ -345,7 +345,7 @@
   <!-- ═══════════════════════════════════════════
        BRO MODE CONCEPT
   ═══════════════════════════════════════════ -->
-  <section id="concept" class="py-24 md:py-32 bg-dark-card border-y border-dark-border">
+  <section id="concept" class="pt-24 md:pt-32 pb-12 md:pb-16 bg-dark-card border-y border-dark-border">
     <div class="max-w-4xl mx-auto px-6">
       <div class="fade-up">
         <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
@@ -381,7 +381,7 @@
   <!-- ═══════════════════════════════════════════
        4 PILLARS
   ═══════════════════════════════════════════ -->
-  <section id="pillars" class="py-24 md:py-32">
+  <section id="pillars" class="pt-12 md:pt-16 pb-24 md:pb-32">
     <div class="max-w-7xl mx-auto px-6">
       <div class="fade-up text-center mb-16">
         <div class="inline-flex items-center gap-2 bg-lime/10 border border-lime/30 rounded-full px-4 py-1.5 mb-6">
@@ -525,7 +525,7 @@
             </div>
           </div>
           <div class="text-center mt-10">
-            <a href="#waitlist" class="btn-ghost inline-flex">Join the Waitlist</a>
+            <a href="#waitlist" class="btn-outline inline-flex">Join the Waitlist</a>
           </div>
         </div>
       </div>
@@ -600,7 +600,7 @@
             <li class="prog-feature">Progressive difficulty that starts easy and gets real fast</li>
             <li class="prog-feature">Weekly mini-challenges to track improvement</li>
           </ul>
-          <a href="#waitlist" class="btn-ghost w-full text-center block">Join Waitlist for Access</a>
+          <a href="#waitlist" class="btn-outline w-full text-center block">Join Waitlist for Access</a>
         </div>
 
         <!-- Tier 2: No Limits -->
@@ -623,7 +623,7 @@
         </div>
       </div>
       <div class="text-center mt-12">
-        <a href="#waitlist" class="btn-ghost inline-flex">Join the Waitlist</a>
+        <a href="#waitlist" class="btn-outline inline-flex">Join the Waitlist</a>
       </div>
     </div>
   </section>
@@ -774,22 +774,38 @@
           id="waitlist-form"
           action="https://formspree.io/f/mgolgzrl"
           method="POST"
-          class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
+          class="flex flex-col gap-4 max-w-xl mx-auto"
         >
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            required
-            class="form-input flex-1"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email"
-            required
-            class="form-input flex-1"
-          />
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              class="form-input flex-1"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              class="form-input flex-1"
+            />
+          </div>
+          <div>
+            <label for="programme-interest" class="block text-gray-300 text-sm font-medium mb-2">Which best describes you?</label>
+            <select
+              id="programme-interest"
+              name="programme_interest"
+              required
+              class="form-input w-full"
+            >
+              <option value="" disabled selected>Select your level</option>
+              <option value="Beginners">Beginners – new or building foundations</option>
+              <option value="Intermediate">Intermediate – I train regularly, want more structure</option>
+              <option value="Advanced">Advanced – experienced, want high-intensity training</option>
+            </select>
+          </div>
           <button type="submit" class="btn-primary whitespace-nowrap" id="submit-btn">
             <span id="btn-text">Count Me In</span>
             <span id="btn-loading" class="hidden">Sending...</span>
