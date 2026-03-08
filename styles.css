@@ -82,6 +82,18 @@ body {
   cursor: pointer;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   text-decoration: none;
+  box-shadow: 0 0 20px rgba(163, 230, 53, 0.2);
+}
+
+.btn-primary-lg {
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 28px rgba(163, 230, 53, 0.3);
+}
+
+.btn-primary-lg:hover {
+  box-shadow: 0 8px 32px rgba(163, 230, 53, 0.4);
 }
 
 .btn-primary:hover {
@@ -431,18 +443,18 @@ body {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  color: #6b7280;
+  color: #e5e7eb;
   font-size: 0.875rem;
 }
 
 .prog-feature::before {
   content: '—';
-  color: #333;
+  color: #d1d5db;
   flex-shrink: 0;
 }
 
 .prog-feature-lime {
-  color: #9ca3af;
+  color: #e5e7eb;
 }
 
 .prog-feature-lime::before {
