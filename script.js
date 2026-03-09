@@ -107,6 +107,7 @@ if (form) {
       });
 
       if (response.ok) {
+        if (window.fbq) fbq('track', 'Lead');
         form.reset();
         form.classList.add('hidden');
         success.classList.remove('hidden');
