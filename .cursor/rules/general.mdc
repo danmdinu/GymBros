@@ -1,0 +1,17 @@
+---
+description: General AI behavior rules that apply to every session
+alwaysApply: true
+---
+
+# General AI Behavior
+
+## Ask, Don't Assume
+
+If a task is ambiguous, or there are multiple valid approaches with meaningful trade-offs, **ask a clarifying question before writing code**. Do not pick one silently and proceed.
+
+Examples of when to ask:
+- The requirements are unclear (e.g. "add filtering" — what fields? client-side or server-side?)
+- There are 2+ reasonable design approaches (e.g. new abstraction vs. extending existing one)
+- The scope is larger than expected (e.g. the change would touch many files)
+
+One focused question is better than wrong code that needs to be thrown away.

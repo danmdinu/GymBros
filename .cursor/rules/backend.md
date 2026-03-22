@@ -70,6 +70,46 @@ This is the backend API for a workout/fitness tracking application. Built with A
 - Always configure string max lengths
 - Use `ValueGeneratedOnAdd()` for IDs
 
+## Logging
+
+Use `ILogger<T>` with structured logging. Always include relevant context IDs.
+
+```csharp
+// ✅ GOOD
+_logger.LogInformation("Workout {WorkoutId} completed by user {UserId}", workoutId, userId);
+_logger.LogError(ex, "Failed to complete workout {WorkoutId}", workoutId);
+
+// ❌ BAD
+_logger.LogError("Something went wrong");
+```
+
+Log levels:
+- `LogDebug` — internal trace info (disabled in production)
+- `LogInformation` — business events (workout created, user registered)
+- `LogWarning` — recoverable issues (retry, fallback used)
+- `LogError` — failures that need attention
+
+---
+
+## Error Handling
+
+Throw domain-specific exceptions. Handle them globally — never inside controllers.
+
+```csharp
+// ✅ GOOD — throw specific exceptions
+throw new NotFoundException(nameof(Workout), id);
+throw new ValidationException("Workout name is required");
+
+// ❌ BAD — generic catch-and-rethrow
+catch (Exception ex) { _logger.LogError(ex, "..."); throw; }
+```
+
+- Define domain exceptions in the `Domain` layer (`NotFoundException`, `ForbiddenException`, etc.)
+- Handle them in a single global middleware (e.g. `ExceptionHandlingMiddleware`)
+- Never swallow exceptions silently
+
+---
+
 ## Things to Avoid
 
 ❌ **Don't** put business logic in controllers  
