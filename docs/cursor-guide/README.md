@@ -20,6 +20,7 @@
 | 09 | Trust but Verify | 5 min |
 | 10 | Memory & Skills Files | 3 min |
 | 11 | Onboarding with AI | 2 min |
+| 13 | Adversarial Prompts | 5 min |
 | 12 | Cheat Sheet (leave-behind) | — |
 
 ---
@@ -47,5 +48,6 @@
 | [`09-trust-but-verify.md`](09-trust-but-verify.md) | Review every diff |
 | [`10-memory-and-skills.md`](10-memory-and-skills.md) | Persistent AI context |
 | [`11-onboarding.md`](11-onboarding.md) | New dev ramp-up |
+| [`13-adversarial-prompts.md`](13-adversarial-prompts.md) | Bounty hunter, red-team, pre-mortem prompts |
 | [`12-cheat-sheet.md`](12-cheat-sheet.md) | Quick-reference leave-behind |
 | [`prompts/build-feature.md`](prompts/build-feature.md) | Universal feature prompt template |
